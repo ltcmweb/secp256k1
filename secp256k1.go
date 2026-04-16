@@ -55,7 +55,7 @@ func NewRangeProof(value uint64, blind [32]byte,
 	randomizeContext()
 
 	var (
-		scratch      = C.secp256k1_scratch_space_create(context, 1<<14)
+		scratch      = C.secp256k1_scratch_space_create(context, 1<<15)
 		proofLen     = C.size_t(len(proof))
 		blindPtr     = C.CBytes(blind[:])
 		blinds       = []*C.uchar{(*C.uchar)(blindPtr)}
@@ -84,7 +84,7 @@ func (proof *RangeProof) Verify(commit [33]byte, extraData []byte) bool {
 	defer mu.RUnlock()
 
 	var (
-		scratch = C.secp256k1_scratch_space_create(context, 1<<14)
+		scratch = C.secp256k1_scratch_space_create(context, 1<<15)
 		com     C.secp256k1_pedersen_commitment
 	)
 
