@@ -155,7 +155,7 @@ static SECP256K1_INLINE void *checked_realloc(const secp256k1_callback* cb, void
 #   define SECP256K1_RESTRICT
 #  endif
 # else
-#  define SECP256K1_RESTRICT restrict
+#  define SECP256K1_RESTRICT
 # endif
 #endif
 
