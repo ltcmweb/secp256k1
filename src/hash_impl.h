@@ -153,8 +153,9 @@ static void secp256k1_sha256_finalize(secp256k1_sha256 *hash, unsigned char *out
     secp256k1_sha256_write(hash, pad, 1 + ((119 - (hash->bytes % 64)) % 64));
     secp256k1_sha256_write(hash, sizedesc, 8);
     for (i = 0; i < 8; i++) {
-        secp256k1_write_be32(&out32[4*i], hash->s[i]);
+        secp256k1_write_be32(out32, hash->s[i]);
         hash->s[i] = 0;
+        out32 += 4;
     }
 }
 

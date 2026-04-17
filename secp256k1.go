@@ -5,10 +5,6 @@ package secp256k1
 #define USE_BASIC_CONFIG
 #define ENABLE_MODULE_GENERATOR
 #define ENABLE_MODULE_BULLETPROOF
-#ifndef UINT32_MAX
-#define UINT32_MAX ~(uint32_t)0
-#define UINT64_MAX ~(uint64_t)0
-#endif
 #include <string.h>
 #include "basic-config.h"
 #include "secp256k1.c"
