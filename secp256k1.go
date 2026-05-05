@@ -3,8 +3,11 @@ package secp256k1
 /*
 #cgo CFLAGS: -Isrc
 #define USE_BASIC_CONFIG
+#define ENABLE_MODULE_RECOVERY
 #define ENABLE_MODULE_GENERATOR
 #define ENABLE_MODULE_BULLETPROOF
+#define ENABLE_MODULE_EXTRAKEYS
+#define ENABLE_MODULE_SCHNORRSIG
 #include <string.h>
 #include "basic-config.h"
 #include "secp256k1.c"
